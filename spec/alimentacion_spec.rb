@@ -15,4 +15,12 @@ RSpec.describe Alimentos do
 		expect(@alimento5.nombre).to eq("Huevos")
 	end
 
+	it "Devolviendo las proteinas del alimento" do
+                 expect(@alimento1.proteinas).to eq(5.3)
+                 expect(@alimento2.proteinas).to eq(21.5)
+                 expect(@alimento3.proteinas).to eq(20.6)
+                 expect(@alimento4.proteinas).to eq(25.0)
+                 expect(@alimento5.proteinas).to eq(13.0)
+        end
+
 end
