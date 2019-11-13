@@ -31,5 +31,12 @@ RSpec.describe Alimentos do
                   expect(@alimento5.hidratos).to eq(1.1)
         end
 
+	it "Devolviendo los lípidos del alimento" do
+                  expect(@alimento1.lipidos).to eq(30.0)
+                  expect(@alimento2.lipidos).to eq(6.3)
+                  expect(@alimento3.lipidos).to eq(5.6)
+                  expect(@alimento4.lipidos).to eq(33.0)
+                  expect(@alimento5.lipidos).to eq(11.0)
+        end
 
 end
