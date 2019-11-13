@@ -64,4 +64,12 @@ RSpec.describe Alimentos do
 		expect(@alimento5.to_s).to eq("(Huevos,13.0,1.1,11.0,4.2,5.7)")
 	end
 
+	it "Probando el método valor_energetico" do
+		expect(@alimento1.valor_energetico).to eq(479.2)
+		expect(@alimento2.valor_energetico).to eq(142.7)
+		expect(@alimento3.valor_energetico).to eq(132.8)
+		expect(@alimento4.valor_energetico).to eq(402.2)
+		expect(@alimento5.valor_energetico).to eq(155.4)
+	end
+
 end
