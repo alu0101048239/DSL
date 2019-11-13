@@ -72,4 +72,10 @@ RSpec.describe Alimentos do
 		expect(@alimento5.valor_energetico).to eq(155.4)
 	end
 
+	context "Calculando los impactos ambientales" do
+		it "Calculando el impacto ambiental de un hombre" do
+			expect(@alimento5.impacto_hombre(100)).to eq([6.02,17.34])
+		end
+	end
+
 end
