@@ -39,4 +39,13 @@ RSpec.describe Alimentos do
                   expect(@alimento5.lipidos).to eq(11.0)
         end
 
+	it "Devolviendo los gases del alimento" do
+                  expect(@alimento1.gei).to eq(2.3)
+                  expect(@alimento2.gei).to eq(7.6)
+                  expect(@alimento3.gei).to eq(5.7)
+                  expect(@alimento4.gei).to eq(11.0)
+                  expect(@alimento5.gei).to eq(4.2)
+        end
+
+
 end
