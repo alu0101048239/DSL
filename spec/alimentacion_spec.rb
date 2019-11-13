@@ -23,4 +23,13 @@ RSpec.describe Alimentos do
                  expect(@alimento5.proteinas).to eq(13.0)
         end
 
+	it "Devolviendo los carbohidratos del alimento" do
+                  expect(@alimento1.hidratos).to eq(47.0)
+                  expect(@alimento2.hidratos).to eq(0.0)
+                  expect(@alimento3.hidratos).to eq(0.0)
+                  expect(@alimento4.hidratos).to eq(1.3)
+                  expect(@alimento5.hidratos).to eq(1.1)
+        end
+
+
 end
