@@ -47,5 +47,11 @@ RSpec.describe Alimentos do
                   expect(@alimento5.gei).to eq(4.2)
         end
 
-
+	it "Devolviendo el uso de terreno del alimento" do
+                  expect(@alimento1.terreno).to eq(3.4)
+                  expect(@alimento2.terreno).to eq(11.0)
+                  expect(@alimento3.terreno).to eq(7.1)
+                  expect(@alimento4.terreno).to eq(41.0)
+                  expect(@alimento5.terreno).to eq(5.7)
+        end
 end
