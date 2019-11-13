@@ -6,7 +6,7 @@ RSpec.describe Alimentos do
 		@alimento4 = Alimentos.new("Queso",25.0,1.3,33.0,11.0,41.0)
 		@alimento5 = Alimentos.new("Huevos",13.0,1.1,11.0,4.2,5.7)
 	end
-
+	context "Probando los getters" do
 	it "Devolviendo el nombre del alimento" do
 		expect(@alimento1.nombre).to eq("Chocolate")
 		expect(@alimento2.nombre).to eq("Cerdo")
@@ -54,4 +54,14 @@ RSpec.describe Alimentos do
                   expect(@alimento4.terreno).to eq(41.0)
                   expect(@alimento5.terreno).to eq(5.7)
         end
+	end
+
+	it "Devolviendo el alimento formateado" do
+		expect(@alimento1.to_s).to eq("(Chocolate,5.3,47.0,30.0,2.3,3.4)")
+		expect(@alimento2.to_s).to eq("(Cerdo,21.5,0.0,6.3,7.6,11.0)")
+		expect(@alimento3.to_s).to eq("(Pollo,20.6,0.0,5.6,5.7,7.1)")
+		expect(@alimento4.to_s).to eq("(Queso,25.0,1.3,33.0,11.0,41.0)")
+		expect(@alimento5.to_s).to eq("(Huevos,13.0,1.1,11.0,4.2,5.7)")
+	end
+
 end
