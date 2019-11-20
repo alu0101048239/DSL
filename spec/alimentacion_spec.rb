@@ -185,6 +185,18 @@ RSpec.describe Lista do
                 	expect(@dieta3.dieta_terreno([200,100,100,33.3,127.5,22.5])).to eq(4.44)
 	        end
 
+		it "Dieta vegana en una mujer" do
+	                @alimento1 = Alimentos.new("Cerveza",0.75,5.4,0.0,0.24,0.22)
+        	        @alimento2 = Alimentos.new("Lentejas",32.31,71.5,1.93,0.4,3.4)
+                	@alimento3 = Alimentos.new("Tofu",6.0,1.43,3.6,2.0,2.2)
+	                @alimento4 = Alimentos.new("Nuez",10.55,11.08,28.50,0.3,7.9)
+        	        @dieta4 = Lista.new(nil,nil)
+                	@dieta4.insert([@alimento1,@alimento2,@alimento3,@alimento4])
+
+	                expect(@dieta4.dieta_gases_diarios([150,137.5,75,52.77])).to eq(0.001)
+        	        expect(@dieta4.dieta_gases_anuales([150,137.5,75,52.77])).to eq(0.26)
+                	expect(@dieta4.dieta_terreno([150,137.5,75,52.77])).to eq(1.08)
+	        end
 
 	end
 
