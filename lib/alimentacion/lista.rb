@@ -53,5 +53,10 @@ class Lista
                 end
         end
 
+	def insert(nodos)
+            for i in (0.. nodos.size-1)
+                insert_tail(nodos[i])
+            end
+        end
 
 end

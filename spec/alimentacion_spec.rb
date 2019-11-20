@@ -126,6 +126,12 @@ RSpec.describe Lista do
         	        expect(@lista.head[:value].nombre).to eq("carne vaca")
                 	@lista.extract_head()      #vaciamos la lista para las pruebas siguientes
 		end
+
+		it "Probando el método insert" do
+			@lista.insert([@carne,@queso,@huevos])
+        	        expect(@lista.head[:value].nombre).to eq("carne vaca")
+	                expect(@lista.tail[:value].nombre).to eq("huevos")
+		end
 	end
 	
 end
