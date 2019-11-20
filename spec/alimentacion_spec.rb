@@ -88,6 +88,11 @@ end
 RSpec.describe Lista do
 	before (:all) do
                 @nodo = Nodo.new(1,nil,nil)
+		@lista = Lista.new(nil,nil)
+		@carne = Alimentos.new("carne vaca",1,2,3,5,4)
+                @queso = Alimentos.new("queso",5,6,7,8,9)
+                @huevos = Alimentos.new("huevos",8,7,6,5,4)
+
 	end
 
 	it "Probando la estructura del nodo" do
@@ -95,4 +100,6 @@ RSpec.describe Lista do
                 expect(@nodo.next).to eq(nil)
                 expect(@nodo.prev).to eq(nil)
 	end
+
+	
 end
