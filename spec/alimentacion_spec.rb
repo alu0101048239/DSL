@@ -155,6 +155,21 @@ RSpec.describe Lista do
 			expect(@dieta1.dieta_gases_diarios([150,150,100,33,50,50,50])).to eq(0.008)
 			expect(@dieta1.dieta_terreno([150,150,100,33,50,50,50])).to eq(6.39)
 		end
+
+		it "Dieta vasca en una mujer" do
+                	@alimento1 = Alimentos.new("Cerveza",1.0,7.2,0.0,0.24,0.22)
+	                @alimento2 = Alimentos.new("Chocolate",5.3,47.0,30.0,2.3,3.4)
+        	        @alimento3 = Alimentos.new("Nuez",9,9.45,24.3,0.3,7.9)
+                	@alimento4 = Alimentos.new("Carne cordero",11.48,0.0,10.85,20.0,185.0 )
+	                @alimento5 = Alimentos.new("Salmón",17.16,0.0,11.73,6.0,3.7)
+        	        @dieta2 = Lista.new(nil,nil)
+                	@dieta2.insert([@alimento1,@alimento2,@alimento3,@alimento4,@alimento5])
+
+	                expect(@dieta2.dieta_gases_diarios([200,100,45,63.8,86.25])).to eq(0.006)
+        	        expect(@dieta2.dieta_gases_anuales([200,100,45,63.8,86.25])).to eq(2.09)
+                	expect(@dieta2.dieta_terreno([200,100,45,63.8,86.25])).to eq(12.86)
+	        end
+
 	end
 
 
