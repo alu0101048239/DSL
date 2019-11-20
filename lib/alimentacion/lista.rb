@@ -40,5 +40,18 @@ class Lista
                 end
         end
 
+	def extract_tail()
+                if @head.nil?
+                        raise RuntimeError, "La lista está vacía"
+                else
+                        if @head == @tail
+                                @head, @tail = nil
+                        else
+                                @tail = @tail[:prev]
+                                @tail[:next] = nil
+                        end
+                end
+        end
+
 
 end

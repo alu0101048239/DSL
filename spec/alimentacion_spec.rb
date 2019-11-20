@@ -119,6 +119,13 @@ RSpec.describe Lista do
 			@lista.extract_head()
 	                expect(@lista.head[:value].nombre).to eq("queso")
 		end
+
+		it "Probando el método extract_tail" do
+			@lista.insert_head(@carne)
+	                @lista.extract_tail()
+        	        expect(@lista.head[:value].nombre).to eq("carne vaca")
+                	@lista.extract_head()      #vaciamos la lista para las pruebas siguientes
+		end
 	end
 	
 end
