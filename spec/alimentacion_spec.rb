@@ -198,8 +198,21 @@ RSpec.describe Lista do
                 	expect(@dieta4.dieta_terreno([150,137.5,75,52.77])).to eq(1.08)
 	        end
 
+		it "Dieta locura por la carne en un hombre" do
+	                @alimento1 = Alimentos.new("Lentejas",23.5,52.0,1.4,0.4,3.4)
+        	        @alimento2 = Alimentos.new("Cerveza",0.44,3.15,0.0,0.24,0.22)
+                	@alimento3 = Alimentos.new("Nuez",16.66,17.49,44.98,0.3,7.9)
+	                @alimento4 = Alimentos.new("Cerdo",32.25,0.0,9.45,7.6,11.0)
+        	        @alimento5 = Alimentos.new("Pollo",20.6,0.0,5.6,5.7,7.1)
+                	@alimento6 = Alimentos.new("Carne vaca",26.38,0.0,3.88,50.0,164.0)
+	                @dieta5 = Lista.new(nil,nil)
+        	        @dieta5.insert([@alimento1,@alimento2,@alimento3,@alimento4,@alimento5,@alimento6])
+
+                	expect(@dieta5.dieta_gases_diarios([100,87.5,83.3,150,100,125])).to eq(0.022)
+        	        expect(@dieta5.dieta_gases_anuales([100,87.5,83.3,150,100,125])).to eq(8.05)
+	                expect(@dieta5.dieta_terreno([100,87.5,83.3,150,100,125])).to eq(23.88)
+	        end
+
 	end
-
-
 	
 end
