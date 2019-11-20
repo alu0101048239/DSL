@@ -153,6 +153,7 @@ RSpec.describe Lista do
 
 	                expect(@dieta1.dieta_gases_anuales([150,150,100,33,50,50,50])).to eq(3.08)
 			expect(@dieta1.dieta_gases_diarios([150,150,100,33,50,50,50])).to eq(0.008)
+			expect(@dieta1.dieta_terreno([150,150,100,33,50,50,50])).to eq(6.39)
 		end
 	end
 

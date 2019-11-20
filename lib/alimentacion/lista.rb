@@ -88,5 +88,18 @@ class Lista
                 return gases_diarios.round(3)
         end
 
+	def dieta_terreno(gramos)
+
+                aux = @head
+                suma_terreno = 0
+                i = 0
+                while (!aux.nil?)
+                        suma_terreno += aux[:value].auxiliar2(gramos[i])
+                        aux = aux[:next]
+                        i = i+1
+                end
+                return suma_terreno.round(2)
+
+        end
 
 end
