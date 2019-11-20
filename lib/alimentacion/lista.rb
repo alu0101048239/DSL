@@ -83,5 +83,10 @@ class Lista
 
         end
 
+	def dieta_gases_diarios(gramos)
+                gases_diarios = dieta_gases_anuales(gramos)/365
+                return gases_diarios.round(3)
+        end
+
 
 end

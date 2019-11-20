@@ -152,6 +152,7 @@ RSpec.describe Lista do
                 	@dieta1.insert([@alimento1,@alimento2,@alimento3,@alimento4,@alimento5,@alimento6,@alimento7])
 
 	                expect(@dieta1.dieta_gases_anuales([150,150,100,33,50,50,50])).to eq(3.08)
+			expect(@dieta1.dieta_gases_diarios([150,150,100,33,50,50,50])).to eq(0.008)
 		end
 	end
 
