@@ -70,5 +70,18 @@ class Lista
 
         end
 
+	def dieta_gases_anuales(gramos)
+                aux = @head
+                suma_gases = 0
+                i = 0
+                while (!aux.nil?)
+                        suma_gases += aux[:value].auxiliar(gramos[i])
+                        aux = aux[:next]
+                        i = i+1
+                end
+                return suma_gases.round(2)
+
+        end
+
 
 end

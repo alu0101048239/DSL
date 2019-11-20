@@ -137,5 +137,24 @@ RSpec.describe Lista do
 			expect(@lista.imprimir).to eq(["(carne vaca,1,2,3,5,4)", "(queso,5,6,7,8,9)", "(huevos,8,7,6,5,4)"])
 		end
 	end
+
+	context "Probando las cinco dietas" do
+
+		it "Dieta española en un hombre" do
+	                @alimento1 = Alimentos.new("Chocolate",7.95,70.5,45,2.3,3.4)
+        	        @alimento2 = Alimentos.new("Lentejas",35.25,78,2.1,0.4,3.4)
+                	@alimento3 = Alimentos.new("Queso",25.0,1.3,33.0,11.0,41.0)
+	                @alimento4 = Alimentos.new("Nuez",6.6,6.93,17.82,0.3,7.9)
+        	        @alimento5 = Alimentos.new("Pollo",10.3,0.0,2.8,5.7,7.1)
+                	@alimento6 = Alimentos.new("Cerdo",10.75,0.0,3.15,7.6,11.0)
+	                @alimento7 = Alimentos.new("Camarones",8.8,0.75,0.3,18.0,2.0)
+        	        @dieta1 = Lista.new(nil,nil)
+                	@dieta1.insert([@alimento1,@alimento2,@alimento3,@alimento4,@alimento5,@alimento6,@alimento7])
+
+	                expect(@dieta1.dieta_gases_anuales([150,150,100,33,50,50,50])).to eq(3.08)
+		end
+	end
+
+
 	
 end
