@@ -25,6 +25,20 @@ class Lista
                         @tail = @tail[:next]
                 end
         end
+	
+	def extract_head()
+                if @head.nil?
+                        raise RuntimeError, "La lista está vacía"
+                else
+                        if @head == @tail
+                                @head, @tail = nil
+                        else
+                                @head = @head[:next]
+                                @head[:prev] = nil
+                        end
+
+                end
+        end
 
 
 end

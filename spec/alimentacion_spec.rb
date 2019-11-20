@@ -115,6 +115,10 @@ RSpec.describe Lista do
         	        expect(@lista.tail[:value].proteinas).to eq(5)                                  
                 end
 
+		it "Probando el método extract_head" do
+			@lista.extract_head()
+	                expect(@lista.head[:value].nombre).to eq("queso")
+		end
 	end
 	
 end
