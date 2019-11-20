@@ -132,6 +132,10 @@ RSpec.describe Lista do
         	        expect(@lista.head[:value].nombre).to eq("carne vaca")
 	                expect(@lista.tail[:value].nombre).to eq("huevos")
 		end
+
+		it "Probando el método imprimir" do
+			expect(@lista.imprimir).to eq(["(carne vaca,1,2,3,5,4)", "(queso,5,6,7,8,9)", "(huevos,8,7,6,5,4)"])
+		end
 	end
 	
 end

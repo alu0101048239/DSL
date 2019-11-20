@@ -59,4 +59,16 @@ class Lista
             end
         end
 
+	def imprimir
+                aux = @head
+                lista = []
+                while (!aux.nil?)
+                        lista << aux[:value].to_s
+                        aux = aux[:next]
+                end
+        return lista
+
+        end
+
+
 end
