@@ -86,5 +86,13 @@ RSpec.describe Alimentos do
 end
 
 RSpec.describe Lista do
+	before (:all) do
+                @nodo = Nodo.new(1,nil,nil)
+	end
 
+	it "Probando la estructura del nodo" do
+		expect(@nodo.value).to eq(1)
+                expect(@nodo.next).to eq(nil)
+                expect(@nodo.prev).to eq(nil)
+	end
 end
