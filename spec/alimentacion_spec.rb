@@ -108,6 +108,13 @@ RSpec.describe Lista do
                 	expect(@lista.head[:value].nombre).to eq("carne vaca")
  	                expect(@lista.head[:value].lipidos).to eq(3)
 	        end
+
+		it "Probando el método insert_tail" do
+                        @lista.insert_tail(@queso)
+	                expect(@lista.tail[:value].nombre).to eq("queso")
+        	        expect(@lista.tail[:value].proteinas).to eq(5)                                  
+                end
+
 	end
 	
 end

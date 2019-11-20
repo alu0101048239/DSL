@@ -16,4 +16,15 @@ class Lista
                 end
         end
 
+	def insert_tail(value)
+                if @head.nil?
+                        @head = Nodo.new(value, nil, nil)
+                        @tail = @head
+                else
+                        @tail[:next] = Nodo.new(value, nil, @tail)
+                        @tail = @tail[:next]
+                end
+        end
+
+
 end
