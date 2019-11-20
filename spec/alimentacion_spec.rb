@@ -84,3 +84,7 @@ RSpec.describe Alimentos do
 	end
 
 end
+
+RSpec.describe Lista do
+
+end
