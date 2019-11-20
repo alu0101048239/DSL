@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["alu0101048239@ull.edu.es"]
 
   spec.summary       = %q{Representación de alimentos.}
-  spec.description   = %q{Representación de alimentos con Programación Orientada a Objetos, utilizando Bundler y TDD.}
+  spec.description   = %q{Representación de alimentos con Programación Orientada a Objetos, utilizando Bundler, TDD y Guard}
   spec.homepage      = "https://github.com/ULL-ESIT-LPP-1920/tdd-alu0101048239.git"
 
   spec.metadata["allowed_push_host"] = "https://github.com/ULL-ESIT-LPP-1920/tdd-alu0101048239.git"
@@ -30,4 +30,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 2.0"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_development_dependency "guard"
+  spec.add_development_dependency "guard-rspec"
+  spec.add_development_dependency "guard-bundler"
+
 end

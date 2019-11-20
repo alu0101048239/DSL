@@ -1,4 +1,4 @@
-# Práctica 6. Desarrollo Dirigido por Pruebas(TDD)
+# Práctica 7. Programación Orientada a Objetos. Listas
 
 **Autor**: David Hernández Suárez
 
@@ -6,7 +6,6 @@
 
 **Descripción**:
 
-En esta práctica vamos a representar alimentos en base a sus valores de proteínas, carbohidratos, lípidos, gases de efecto invernadero y uso del terreno. Para ello utilizaremos Programación Orientada a Objetos , gestión de dependencias con Bundler y metodología de Desarrollo Dirigido por Pruebas (TDD).
-
+En esta práctica vamos a representar alimentos en base a sus valores de proteínas, carbohidratos, lípidos, gases de efecto invernadero y uso del terreno. Para ello utilizaremos Programación Orientada a Objetos , gestión de dependencias con Bundler y metodología de Desarrollo Dirigido por Pruebas (TDD). Utilizaremos una lista doblemente enlazada para representar un conjunto de alimentos, que formarán una dieta; de esta forma crearemos 5 dietas distintas. Utilizaremos Guard para que se ejecuten las pruebas directamente, sin hacer rake.
 
 
