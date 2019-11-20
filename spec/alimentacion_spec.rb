@@ -101,5 +101,13 @@ RSpec.describe Lista do
                 expect(@nodo.prev).to eq(nil)
 	end
 
+	context "Probando la lista doblemente enlazada" do
+
+		it "Probando el método insert_head y los getters" do
+        	        @lista.insert_head(@carne)
+                	expect(@lista.head[:value].nombre).to eq("carne vaca")
+ 	                expect(@lista.head[:value].lipidos).to eq(3)
+	        end
+	end
 	
 end
