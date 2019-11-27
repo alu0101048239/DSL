@@ -1,5 +1,10 @@
 class Plato 
 	attr_reader :nombre_plato, :lista_alimentos, :lista_gramos
+	include Comparable
+        def <=>(anOther)
+                self.porcentaje_proteinas <=> anOther.porcentaje_proteinas
+        end
+
         def initialize(nombre_plato, lista_alimentos, lista_gramos)
                 @nombre_plato = nombre_plato
                 @lista_alimentos = lista_alimentos
