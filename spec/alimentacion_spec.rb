@@ -324,4 +324,31 @@ RSpec.describe Plato do
 end
 
 RSpec.describe Eficiencia_Energetica do
+
+	 before (:all) do
+                @pollo = Alimentos.new("Pollo",20.6,0.0,5.6,5.7,7.1)
+                @queso = Alimentos.new("Queso",25.0,1.3,33.0,11.0,41.0)
+                @lista_alimentos = Lista.new(nil,nil)
+                @lista_alimentos.insert([@pollo,@queso])
+                @lista_gramos = Lista.new(nil,nil)
+                @lista_gramos.insert([150,200])
+                @eficiencia = Eficiencia_Energetica.new("Pollo con queso",@lista_alimentos,@lista_gramos)
+
+                @cerdo = Alimentos.new("Cerdo",21.5,0.0,6.3,7.6,11.0)
+                @huevos = Alimentos.new("Huevos",13.0,1.1,11.0,4.2,5.7)
+                @lista_alimentos2 = Lista.new(nil,nil)
+                @lista_alimentos2.insert([@cerdo,@huevos])
+                @lista_gramos2 = Lista.new(nil,nil)
+                @lista_gramos2.insert([300,100])
+                @eficiencia2 = Eficiencia_Energetica.new("Cerdo con huevos",@lista_alimentos2,@lista_gramos2)
+
+        end
+
+        context "Probando la clase Eficiencia_Energetica" do
+
+                it "Obteniendo gases anuales" do
+                        expect(@eficiencia.emisiones_gases_anuales).to eq(3.06)
+                end
+	end
+
 end

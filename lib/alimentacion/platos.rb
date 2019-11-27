@@ -89,4 +89,29 @@ class Plato
 end
 
 class Eficiencia_Energetica < Plato
+
+	attr_reader :nombre_plato, :lista_alimentos, :lista_gramos
+        include Comparable
+        def <=>(anOther)
+                self.uso_terreno <=> anOther.uso_terreno
+        end
+
+        def initialize(nombre_plato, lista_alimentos, lista_gramos)
+                super(nombre_plato, lista_alimentos, lista_gramos)
+        end
+
+        def emisiones_gases_anuales
+                aux = @lista_alimentos.head
+                aux2 = @lista_gramos.head
+                suma_gases_anuales = 0
+                while (!aux.nil?)
+                        suma_gases_anuales += aux[:value].auxiliar(aux2[:value])
+                        aux = aux[:next]
+                        aux2 = aux2[:next]
+                end
+
+                return suma_gases_anuales.round(2)
+        end
+
+
 end
