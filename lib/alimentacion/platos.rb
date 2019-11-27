@@ -113,5 +113,10 @@ class Eficiencia_Energetica < Plato
                 return suma_gases_anuales.round(2)
         end
 
+	def emisiones_gases_diarios
+                suma = (emisiones_gases_anuales / 365)
+                return suma.round(3)
+        end
+
 
 end

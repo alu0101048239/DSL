@@ -349,6 +349,12 @@ RSpec.describe Eficiencia_Energetica do
                 it "Obteniendo gases anuales" do
                         expect(@eficiencia.emisiones_gases_anuales).to eq(3.06)
                 end
+
+		it "Obteniendo gases diarios" do
+                        expect(@eficiencia.emisiones_gases_diarios).to eq(0.008)
+                end
+
+
 	end
 
 end
