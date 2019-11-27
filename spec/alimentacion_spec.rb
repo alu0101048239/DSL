@@ -560,6 +560,21 @@ RSpec.describe Eficiencia_Energetica do
                         expect(@eficiencia2.lista_alimentos.sort).to eq([@leche,@nueces])
 		end
 
+		it "Platos de la dieta vegana" do
+			@tofu = Alimentos.new("Tofu",8.0,1.9,4.8,2.0,2.2)
+                        @nueces = Alimentos.new("Nuez",20.0,21.0,54.0,0.3,7.9)
+                        @lista2 = Lista.new(nil,nil)
+                        @lista2.insert([@tofu,@nueces])
+                        @gramos2 = Lista.new(nil,nil)
+                        @gramos2.insert([300,150])
+                        @plato2 = Plato.new("Tofu con nueces",@lista2,@gramos2)
+                        @eficiencia2 = Eficiencia_Energetica.new("Tofu con nueces",@lista2, @gramos2 )
+			expect(@eficiencia2.lista_alimentos.min).to eq(@tofu)
+                        expect(@eficiencia2.lista_alimentos.max).to eq(@nueces)
+                        expect(@eficiencia2.lista_alimentos.collect{ |i| i.to_s}).to eq(["(Tofu,8.0,1.9,4.8,2.0,2.2)", "(Nuez,20.0,21.0,54.0,0.3,7.9)"])
+                        expect(@eficiencia2.lista_alimentos.select{ |i| i.hidratos > 5}).to eq([@nueces])
+                        expect(@eficiencia2.lista_alimentos.sort).to eq([@tofu,@nueces])
+		end
 
 	end
 
