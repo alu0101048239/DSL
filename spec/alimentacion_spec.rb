@@ -362,6 +362,15 @@ RSpec.describe Eficiencia_Energetica do
                         expect(@eficiencia.to_s).to eq("( 3.06, 0.008, 9.26 )")
                 end
 
+		it "Obteniendo clase y tipo de un objeto" do
+                        expect(@eficiencia.class).to eq(Eficiencia_Energetica)
+                        expect(@eficiencia.instance_of?Eficiencia_Energetica).to eq(true)
+                        expect(@eficiencia.instance_of?Plato).to eq(false)
+                        expect(@eficiencia.is_a?Eficiencia_Energetica).to eq(true)
+                        expect(@eficiencia.is_a?Object).to eq(true)
+                        expect(@eficiencia.is_a?BasicObject).to eq(true)
+                        expect(@eficiencia.kind_of?Eficiencia_Energetica).to eq(true)
+                end
 
 	end
 
