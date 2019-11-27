@@ -315,7 +315,10 @@ RSpec.describe Plato do
 		it "Obteniendo valor calórico total del plato" do
                         expect(@plato.valor_calorico).to eq(1003.6)
                 end
-
+		
+		 it "Obteniendo el plato formateado" do
+                        expect(@plato.to_s).to eq(["Pollo con queso", "(Pollo,30.9,0.0,8.4,5.7,7.1)", 150, "(Queso,50.0,2.6,66.0,11.0,41.0)", 200])
+                end
 
 
 	end

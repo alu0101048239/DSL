@@ -69,6 +69,22 @@ class Plato
 
                 return calorias.round(2)
         end
+	
+	def to_s
+                aux = @lista_alimentos.head
+                aux2 = @lista_gramos.head
+                vector = []
+                vector << @nombre_plato
+                while (!aux.nil?)
+                        vector << aux[:value].to_s
+                        vector << aux2[:value]
+                        aux = aux[:next]
+                        aux2 = aux2[:next]
+                end
+
+                return vector
+
+        end
 
 
 end
