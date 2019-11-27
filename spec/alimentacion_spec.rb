@@ -275,4 +275,26 @@ RSpec.describe Lista do
 end
 
 RSpec.describe Plato do
+
+	 before (:all) do
+                @pollo = Alimentos.new("Pollo",20.6,0.0,5.6,5.7,7.1)
+                @queso = Alimentos.new("Queso",25.0,1.3,33.0,11.0,41.0)
+                @lista_alimentos = Lista.new(nil,nil)
+                @lista_alimentos.insert([@pollo,@queso])
+                @lista_gramos = Lista.new(nil,nil)
+                @lista_gramos.insert([150,200])
+                @plato = Plato.new("Pollo con queso",@lista_alimentos,@lista_gramos)
+
+        end
+
+	context "Probando la clase Plato" do
+                it "Obteniendo el nombre de un plato" do
+                        expect(@plato.nombre_plato).to eq("Pollo con queso")
+                end
+	end
+
+
+
+
+
 end
