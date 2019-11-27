@@ -511,4 +511,22 @@ RSpec.describe Eficiencia_Energetica do
 
 	end
 
+	context "Enumerando platos" do
+                it "Platos de la dieta española" do
+			@lentejas = Alimentos.new("Lentejas",23.5,52.0,1.4,0.4,3.4)
+                        @salmon = Alimentos.new("Salmón",19.9,0.0,13.6,6.0,3.7)
+                        @lista = Lista.new(nil,nil)
+                        @lista.insert([@lentejas,@salmon])
+                        @gramos = Lista.new(nil,nil)
+                        @gramos.insert([200,250])
+                        @plato = Plato.new("Lentejas con salmón",@lista, @gramos )
+                        @eficiencia = Eficiencia_Energetica.new("Lentejas con salmón",@lista, @gramos )
+			expect(@eficiencia.lista_alimentos.min).to eq(@salmon)
+			expect(@eficiencia.lista_alimentos.max).to eq(@lentejas)			
+			expect(@eficiencia.lista_alimentos.collect{ |i| i.to_s}).to eq(["(Lentejas,23.5,52.0,1.4,0.4,3.4)", "(Salmón,19.9,0.0,13.6,6.0,3.7)"])
+			expect(@eficiencia.lista_alimentos.select{ |i| i.terreno > 3}).to eq([@lentejas,@salmon])
+			expect(@eficiencia.lista_alimentos.sort).to eq([@salmon,@lentejas])
+                end
+	end
+
 end
