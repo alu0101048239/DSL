@@ -244,5 +244,11 @@ RSpec.describe Lista do
                 end
 
 	end
+
+	context "Enumerando listas de alimentos" do
+                it "Método min" do
+                        expect(@lista2.min).to eq(@carne)
+                end
+	end
 	
 end

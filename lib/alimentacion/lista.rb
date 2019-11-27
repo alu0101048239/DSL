@@ -1,5 +1,15 @@
 Nodo = Struct.new(:value, :next, :prev)
 class Lista
+	include Enumerable
+
+        def each
+                aux = @head
+                while !aux.nil?
+                        yield aux[:value]
+                        aux = aux[:next]
+                end
+        end
+
 	attr_accessor :head,:tail
         def initialize(head,tail)
                 @head = nil
