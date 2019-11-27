@@ -271,7 +271,8 @@ RSpec.describe Lista do
                 end
 
 
-        end
+        end	
+end
 
-	
+RSpec.describe Plato do
 end
