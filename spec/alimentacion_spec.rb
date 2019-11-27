@@ -576,6 +576,24 @@ RSpec.describe Eficiencia_Energetica do
                         expect(@eficiencia2.lista_alimentos.sort).to eq([@tofu,@nueces])
 		end
 
+		it "Platos de la dieta locura por la carne" do
+			@cerdo = Alimentos.new("Cerdo",21.5,0.0,6.3,7.6,11.0)
+                        @cerveza = Alimentos.new("Cerveza",0.5,3.6,0.0,0.24,0.22)
+                        @lista = Lista.new(nil,nil)
+                        @lista.insert([@cerdo,@cerveza])
+                        @gramos = Lista.new(nil,nil)
+                        @gramos.insert([350,150])
+                        @plato = Plato.new("Cerdo con cerveza",@lista, @gramos )
+                        @eficiencia = Eficiencia_Energetica.new("Cerdo con cerveza",@lista, @gramos )
+			expect(@eficiencia.lista_alimentos.min).to eq(@cerveza)
+                        expect(@eficiencia.lista_alimentos.max).to eq(@cerdo)
+                        expect(@eficiencia.lista_alimentos.collect{ |i| i.to_s}).to eq(["(Cerdo,21.5,0.0,6.3,7.6,11.0)", "(Cerveza,0.5,3.6,0.0,0.24,0.22)"]
+)
+                        expect(@eficiencia.lista_alimentos.select{ |i| i.proteinas > 5}).to eq([@cerdo])
+                        expect(@eficiencia.lista_alimentos.sort).to eq([@cerveza,@cerdo])
+		end
+
+
 	end
 
 end
