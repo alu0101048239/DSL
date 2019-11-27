@@ -118,5 +118,18 @@ class Eficiencia_Energetica < Plato
                 return suma.round(3)
         end
 
+	def uso_terreno
+                aux = @lista_alimentos.head
+                aux2 = @lista_gramos.head
+                suma_terreno = 0
+                while (!aux.nil?)
+                        suma_terreno += aux[:value].auxiliar2(aux2[:value])
+                        aux = aux[:next]
+                        aux2 = aux2[:next]
+                end
+
+                return suma_terreno.round(2)
+        end
+
 
 end

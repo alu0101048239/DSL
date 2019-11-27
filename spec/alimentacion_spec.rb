@@ -353,6 +353,10 @@ RSpec.describe Eficiencia_Energetica do
 		it "Obteniendo gases diarios" do
                         expect(@eficiencia.emisiones_gases_diarios).to eq(0.008)
                 end
+		
+		it "Obteniendo uso del terreno" do
+                        expect(@eficiencia.uso_terreno).to eq(9.26)
+                end
 
 
 	end
