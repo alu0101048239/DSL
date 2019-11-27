@@ -249,6 +249,29 @@ RSpec.describe Lista do
                 it "Método min" do
                         expect(@lista2.min).to eq(@carne)
                 end
-	end
+
+		it "Método max" do
+                        expect(@lista2.max).to eq(@huevos)
+                end
+
+                it "Método collect" do
+                        expect(@lista2.collect{ |i| i.to_s + " food" }).to eq(["(queso,5,6,7,8,9) food", "(huevos,8,7,6,5,4) food", "(carne vaca,1,2,3,5,4) food", "(Salmon,5,4,3,6,7) food"])
+                end
+
+                it "Método sort" do
+                        expect(@lista2.sort).to eq([@carne,@queso,@salmon,@huevos])
+                end
+
+                it "Método select" do
+                        expect(@lista2.select{ |i| i.terreno.between?(7,8)}).to eq([@salmon])
+                end
+
+                it "Método detect" do
+                        expect(@lista2.detect{ |i| i.proteinas >= 6}).to eq(@huevos)
+                end
+
+
+        end
+
 	
 end
