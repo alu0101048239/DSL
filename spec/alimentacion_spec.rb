@@ -428,6 +428,34 @@ RSpec.describe Eficiencia_Energetica do
 
                 end
 
+		 it "Platos de la dieta vegetariana" do
+
+                        #PRIMER PLATO
+                        @lentejas = Alimentos.new("Lentejas",23.5,52.0,1.4,0.4,3.4)
+                        @huevos = Alimentos.new("Huevos",13.0,1.1,11.0,4.2,5.7)
+                        @lista = Lista.new(nil,nil)
+                        @lista.insert([@lentejas,@huevos])
+                        @gramos = Lista.new(nil,nil)
+                        @gramos.insert([350,100])
+                        @plato = Plato.new("Lentejas con huevos",@lista, @gramos )
+                        @eficiencia = Eficiencia_Energetica.new("Lentejas con huevos",@lista, @gramos )
+
+                        #SEGUNDO PLATO
+                        @leche = Alimentos.new("Leche",3.3,4.8,3.2,3.2,8.9)
+                        @nueces = Alimentos.new("Nuez",20.0,21.0,54.0,0.3,7.9)
+                        @lista2 = Lista.new(nil,nil)
+                        @lista2.insert([@leche,@nueces])
+                        @gramos2 = Lista.new(nil,nil)
+                        @gramos2.insert([150,300])
+                        @plato2 = Plato.new("Pollo con chocolate",@lista2,@gramos2)
+                        @eficiencia2 = Eficiencia_Energetica.new("Pollo con chocolate",@lista2, @gramos2 )
+
+                        expect(@plato <= @plato2).to eq(false)
+                        expect(@eficiencia > @eficiencia2).to eq(false)
+
+                end
+
+
 	end
 
 end
