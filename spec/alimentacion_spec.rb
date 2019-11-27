@@ -447,8 +447,8 @@ RSpec.describe Eficiencia_Energetica do
                         @lista2.insert([@leche,@nueces])
                         @gramos2 = Lista.new(nil,nil)
                         @gramos2.insert([150,300])
-                        @plato2 = Plato.new("Pollo con chocolate",@lista2,@gramos2)
-                        @eficiencia2 = Eficiencia_Energetica.new("Pollo con chocolate",@lista2, @gramos2 )
+                        @plato2 = Plato.new("Leche con nueces",@lista2,@gramos2)
+                        @eficiencia2 = Eficiencia_Energetica.new("Leche con nueces",@lista2, @gramos2 )
 
                         expect(@plato <= @plato2).to eq(false)
                         expect(@eficiencia > @eficiencia2).to eq(false)
@@ -544,6 +544,21 @@ RSpec.describe Eficiencia_Energetica do
                         expect(@eficiencia2.lista_alimentos.sort).to eq([@chocolate,@pollo])
 		end
 
+		it "Platos de la dieta vegetariana" do
+			@leche = Alimentos.new("Leche",3.3,4.8,3.2,3.2,8.9)
+                        @nueces = Alimentos.new("Nuez",20.0,21.0,54.0,0.3,7.9)
+			@lista2 = Lista.new(nil,nil)
+                        @lista2.insert([@nueces,@leche])
+                        @gramos2 = Lista.new(nil,nil)
+                        @gramos2.insert([150,300])
+                        @plato2 = Plato.new("Leche con nueces",@lista2,@gramos2)
+                        @eficiencia2 = Eficiencia_Energetica.new("Leche con nueces",@lista2, @gramos2 )
+			expect(@eficiencia2.lista_alimentos.min).to eq(@leche)
+                        expect(@eficiencia2.lista_alimentos.max).to eq(@nueces)
+                        expect(@eficiencia2.lista_alimentos.collect{ |i| i.to_s}).to eq(["(Nuez,20.0,21.0,54.0,0.3,7.9)", "(Leche,3.3,4.8,3.2,3.2,8.9)"])
+                        expect(@eficiencia2.lista_alimentos.select{ |i| i.lipidos > 5}).to eq([@nueces])
+                        expect(@eficiencia2.lista_alimentos.sort).to eq([@leche,@nueces])
+		end
 
 
 	end
