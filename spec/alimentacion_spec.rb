@@ -357,6 +357,10 @@ RSpec.describe Eficiencia_Energetica do
 		it "Obteniendo uso del terreno" do
                         expect(@eficiencia.uso_terreno).to eq(9.26)
                 end
+		
+		it "Obteniendo la eficiencia energética formateada" do
+                        expect(@eficiencia.to_s).to eq("( 3.06, 0.008, 9.26 )")
+                end
 
 
 	end

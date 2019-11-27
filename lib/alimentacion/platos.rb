@@ -131,5 +131,10 @@ class Eficiencia_Energetica < Plato
                 return suma_terreno.round(2)
         end
 
+	def to_s
+                "( #{self.emisiones_gases_anuales}, #{self.emisiones_gases_diarios}, #{self.uso_terreno} )"
+
+        end
+
 
 end
