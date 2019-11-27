@@ -527,6 +527,25 @@ RSpec.describe Eficiencia_Energetica do
 			expect(@eficiencia.lista_alimentos.select{ |i| i.terreno > 3}).to eq([@lentejas,@salmon])
 			expect(@eficiencia.lista_alimentos.sort).to eq([@salmon,@lentejas])
                 end
+
+		it "Platos de la dieta vasca" do
+			@chocolate = Alimentos.new("Chocolate",5.3,47.0,30.0,2.3,3.4)
+                        @pollo = Alimentos.new("Pollo",20.6,0.0,5.6,5.7,7.1)
+                        @lista2 = Lista.new(nil,nil)
+                        @lista2.insert([@chocolate,@pollo])
+                        @gramos2 = Lista.new(nil,nil)
+                        @gramos2.insert([150,300])
+                        @plato2 = Plato.new("Pollo con chocolate",@lista2,@gramos2)
+                        @eficiencia2 = Eficiencia_Energetica.new("Pollo con chocolate",@lista2, @gramos2 )
+			expect(@eficiencia2.lista_alimentos.min).to eq(@chocolate)
+                        expect(@eficiencia2.lista_alimentos.max).to eq(@pollo)
+			expect(@eficiencia2.lista_alimentos.collect{ |i| i.to_s}).to eq(["(Chocolate,5.3,47.0,30.0,2.3,3.4)", "(Pollo,20.6,0.0,5.6,5.7,7.1)"])
+                        expect(@eficiencia2.lista_alimentos.select{ |i| i.gei > 2}).to eq([@chocolate,@pollo])
+                        expect(@eficiencia2.lista_alimentos.sort).to eq([@chocolate,@pollo])
+		end
+
+
+
 	end
 
 end
