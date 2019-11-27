@@ -400,6 +400,34 @@ RSpec.describe Eficiencia_Energetica do
                         expect(@eficiencia > @eficiencia2).to eq(true)
 
                 end
+
+		it "Platos de la dieta vasca" do
+
+                        #PRIMER PLATO
+                        @lentejas = Alimentos.new("Lentejas",23.5,52.0,1.4,0.4,3.4)
+                        @leche = Alimentos.new("Leche",3.3,4.8,3.2,3.2,8.9)
+                        @lista = Lista.new(nil,nil)
+                        @lista.insert([@lentejas,@leche])
+                        @gramos = Lista.new(nil,nil)
+                        @gramos.insert([400,100])
+                        @plato = Plato.new("Lentejas con leche",@lista, @gramos )
+                        @eficiencia = Eficiencia_Energetica.new("Lentejas con leche",@lista, @gramos )
+
+                        #SEGUNDO PLATO
+                        @chocolate = Alimentos.new("Chocolate",5.3,47.0,30.0,2.3,3.4)
+                        @pollo = Alimentos.new("Pollo",20.6,0.0,5.6,5.7,7.1)
+                        @lista2 = Lista.new(nil,nil)
+                        @lista2.insert([@chocolate,@pollo])
+                        @gramos2 = Lista.new(nil,nil)
+                        @gramos2.insert([150,300])
+                        @plato2 = Plato.new("Pollo con chocolate",@lista2,@gramos2)
+                        @eficiencia2 = Eficiencia_Energetica.new("Pollo con chocolate",@lista2, @gramos2 )
+
+                        expect(@plato <= @plato2).to eq(false)
+                        expect(@eficiencia > @eficiencia2).to eq(false)
+
+                end
+
 	end
 
 end
