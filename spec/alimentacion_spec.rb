@@ -304,5 +304,10 @@ RSpec.describe Plato do
                         expect(@plato.porcentaje_proteinas).to eq(23.11)
                 end
 
+		it "Obteniendo el porcentaje de hidratos" do
+                        expect(@plato.porcentaje_hidratos).to eq(0.74)
+                end
+
+
 	end
 end
