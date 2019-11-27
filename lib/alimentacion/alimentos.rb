@@ -1,5 +1,11 @@
 class Alimentos
 	attr_reader :nombre,:proteinas,:hidratos,:lipidos,:gei,:terreno
+	include Comparable
+
+        def <=>(anOther)
+		self. proteinas <=> anOther.proteinas
+        end
+
 	def initialize(nombre,proteinas,hidratos,lipidos,gei,terreno)
 		@nombre,@proteinas,@hidratos,@lipidos,@gei,@terreno = nombre,proteinas,hidratos,lipidos,gei,terreno
 	end

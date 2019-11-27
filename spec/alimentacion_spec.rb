@@ -87,11 +87,14 @@ end
 
 RSpec.describe Lista do
 	before (:all) do
-                @nodo = Nodo.new(1,nil,nil)
-		@lista = Lista.new(nil,nil)
-		@carne = Alimentos.new("carne vaca",1,2,3,5,4)
+		@nodo = Nodo.new(1,nil,nil)
+                @lista = Lista.new(nil,nil)
+                @carne = Alimentos.new("carne vaca",1,2,3,5,4)
                 @queso = Alimentos.new("queso",5,6,7,8,9)
                 @huevos = Alimentos.new("huevos",8,7,6,5,4)
+                @salmon = Alimentos.new("Salmon",5,4,3,6,7)
+                @lista2 = Lista.new(nil,nil)
+                @lista2.insert([@queso,@huevos,@carne,@salmon])
 
 	end
 
@@ -213,6 +216,12 @@ RSpec.describe Lista do
 	                expect(@dieta5.dieta_terreno([100,87.5,83.3,150,100,125])).to eq(23.88)
 	        end
 
+	end
+
+	context "Comparando alimentos en base a sus proteínas" do
+                it "Operador <=" do
+                        expect(@queso <= @salmon).to eq(true)
+                end
 	end
 	
 end
