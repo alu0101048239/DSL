@@ -54,5 +54,21 @@ class Plato
 
         end
 
+	def valor_calorico
+                aux = @lista_alimentos.head
+                aux2 = @lista_gramos.head
+                calorias = 0
+                while (!aux.nil?)
+                        aux[:value].proteinas = ( (aux[:value].proteinas) * (aux2[:value]) )/100
+                        aux[:value].hidratos = ( (aux[:value].hidratos) * (aux2[:value]) )/100
+                        aux[:value].lipidos = ( (aux[:value].lipidos) * (aux2[:value]) )/100
+                        calorias += aux[:value].valor_energetico
+                        aux = aux[:next]
+                        aux2 = aux2[:next]
+                end
+
+                return calorias.round(2)
+        end
+
 
 end

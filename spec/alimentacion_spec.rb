@@ -312,6 +312,11 @@ RSpec.describe Plato do
                         expect(@plato.porcentaje_lipidos).to eq(21.26)
                 end
 
+		it "Obteniendo valor calórico total del plato" do
+                        expect(@plato.valor_calorico).to eq(1003.6)
+                end
+
+
 
 	end
 end

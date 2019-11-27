@@ -1,5 +1,5 @@
 class Alimentos
-	attr_reader :nombre,:proteinas,:hidratos,:lipidos,:gei,:terreno
+	attr_accessor :nombre,:proteinas,:hidratos,:lipidos,:gei,:terreno
 	include Comparable
 
         def <=>(anOther)
