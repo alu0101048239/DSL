@@ -320,6 +320,8 @@ RSpec.describe Plato do
                         expect(@plato.to_s).to eq(["Pollo con queso", "(Pollo,30.9,0.0,8.4,5.7,7.1)", 150, "(Queso,50.0,2.6,66.0,11.0,41.0)", 200])
                 end
 
-
 	end
+end
+
+RSpec.describe Eficiencia_Energetica do
 end

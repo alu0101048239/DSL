@@ -86,5 +86,7 @@ class Plato
 
         end
 
+end
 
+class Eficiencia_Energetica < Plato
 end
