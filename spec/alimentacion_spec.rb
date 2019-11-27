@@ -482,7 +482,32 @@ RSpec.describe Eficiencia_Energetica do
 
                 end
 
+		it "Platos de la dieta locura por la carne" do
 
+                        #PRIMER PLATO
+                        @cerdo = Alimentos.new("Cerdo",21.5,0.0,6.3,7.6,11.0)
+                        @cerveza = Alimentos.new("Cerveza",0.5,3.6,0.0,0.24,0.22)
+                        @lista = Lista.new(nil,nil)
+                        @lista.insert([@cerdo,@cerveza])
+                        @gramos = Lista.new(nil,nil)
+                        @gramos.insert([350,150])
+                        @plato = Plato.new("Cerdo con cerveza",@lista, @gramos )
+                        @eficiencia = Eficiencia_Energetica.new("Cerdo con cerveza",@lista, @gramos )
+
+                        #SEGUNDO PLATO
+                        @pollo = Alimentos.new("Pollo",20.6,0.0,5.6,5.7,7.1)
+                        @lentejas = Alimentos.new("Lentejas",23.5,52.0,1.4,0.4,3.4)
+                        @lista2 = Lista.new(nil,nil)
+                        @lista2.insert([@pollo,@lentejas])
+                        @gramos2 = Lista.new(nil,nil)
+                        @gramos2.insert([300,200])
+                        @plato2 = Plato.new("Pollo con lentejas",@lista2,@gramos2)
+                        @eficiencia2 = Eficiencia_Energetica.new("Pollo con lentejas",@lista2, @gramos2 )
+
+                        expect(@plato <= @plato2).to eq(true)
+                        expect(@eficiencia > @eficiencia2).to eq(true)
+
+                end
 
 	end
 
