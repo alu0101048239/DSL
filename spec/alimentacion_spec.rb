@@ -222,6 +222,27 @@ RSpec.describe Lista do
                 it "Operador <=" do
                         expect(@queso <= @salmon).to eq(true)
                 end
+
+		it "Operador ==" do
+                        expect(@queso == @salmon).to eq(true)
+                end
+		
+		it "Operador >=" do
+                        expect(@salmon >= @queso).to eq(true)
+                end
+
+                it "Operador <" do
+                        expect(@salmon < @huevos).to eq(true)
+                end
+
+                it "Operador >" do
+                        expect(@queso > @carne).to eq(true)
+                end
+
+                it "Operador between?" do
+                        expect(@salmon.between?(@carne,@huevos)).to eq(true)
+                end
+
 	end
 	
 end
