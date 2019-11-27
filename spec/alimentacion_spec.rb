@@ -291,10 +291,18 @@ RSpec.describe Plato do
                 it "Obteniendo el nombre de un plato" do
                         expect(@plato.nombre_plato).to eq("Pollo con queso")
                 end
+
+		it "Obteniendo el conjunto de alimentos" do
+                        expect(@plato.lista_alimentos.imprimir).to eq(["(Pollo,20.6,0.0,5.6,5.7,7.1)", "(Queso,25.0,1.3,33.0,11.0,41.0)"])
+                end
+
+                it "Obteniendo el conjunto de gramos" do
+                        expect(@plato.lista_gramos.imprimir).to eq(["150", "200"])
+                end
+
+		it "Obteniendo el porcentaje de proteínas" do
+                        expect(@plato.porcentaje_proteinas).to eq(23.11)
+                end
+
 	end
-
-
-
-
-
 end
