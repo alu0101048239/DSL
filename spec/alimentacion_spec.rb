@@ -596,4 +596,42 @@ RSpec.describe Eficiencia_Energetica do
 
 	end
 
+	context "Creando un menú dietético" do
+                before (:all) do
+                 #PRIMER PLATO
+                        @lentejas = Alimentos.new("Lentejas",23.5,52.0,1.4,0.4,3.4)
+                        @salmon = Alimentos.new("Salmón",19.9,0.0,13.6,6.0,3.7)
+                        @lista = Lista.new(nil,nil)
+                        @lista.insert([@lentejas,@salmon])
+                        @gramos = Lista.new(nil,nil)
+                        @gramos.insert([200,250])
+                        @plato = Plato.new("Lentejas con salmón",@lista, @gramos )
+                        @eficiencia = Eficiencia_Energetica.new("Lentejas con salmón",@lista, @gramos )
+
+                        #SEGUNDO PLATO
+                        @chocolate = Alimentos.new("Chocolate",5.3,47.0,30.0,2.3,3.4)
+                        @huevos = Alimentos.new("Huevos",13.0,1.1,11.0,4.2,5.7)
+                        @lista2 = Lista.new(nil,nil)
+                        @lista2.insert([@chocolate,@huevos])
+                        @gramos2 = Lista.new(nil,nil)
+                        @gramos2.insert([200,150])
+                        @plato2 = Plato.new("Huevos con chocolate",@lista2,@gramos2)
+                        @eficiencia2 = Eficiencia_Energetica.new("Huevos con chocolate",@lista2, @gramos2 )
+
+
+                        #TERCER PLATO
+                        @tofu = Alimentos.new("Tofu",8.0,1.9,4.8,2.0,2.2)
+                        @nueces = Alimentos.new("Nuez",20.0,21.0,54.0,0.3,7.9)
+                        @lista3 = Lista.new(nil,nil)
+                        @lista3.insert([@tofu,@nueces])
+                        @gramos3 = Lista.new(nil,nil)
+                        @gramos3.insert([300,150])
+                        @plato3 = Plato.new("Tofu con nueces",@lista3,@gramos3)
+                        @eficiencia3 = Eficiencia_Energetica.new("Tofu con nueces",@lista3, @gramos3 )
+      
+      			@menu = [@eficiencia,@eficiencia2,@eficiencia3]
+			@precios = [11.50,3.50,8.25]
+		end
+	end
+
 end
