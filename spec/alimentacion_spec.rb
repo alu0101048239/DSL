@@ -643,7 +643,9 @@ RSpec.describe Eficiencia_Energetica do
 		it "Modificando el precio de los platos" do
 			aux=@menu.index(@menu.max)   		#obtenemos del plato con mayor huella su índice en el vector
                         proporcion = 0.5*@precios[aux]		#calculamos la cantidad que sumaremos al precio de cada plato
-                        expect(@precios.collect{ |i| i + proporcion}).to eq([17.25, 9.25, 14.0])
+			nuevo_precio = []
+			@precios.collect{ |i| nuevo_precio << i + proporcion}
+			expect(nuevo_precio).to eq([17.25, 9.25, 14.0])
 		end
 	end
 
