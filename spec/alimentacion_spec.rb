@@ -632,6 +632,12 @@ RSpec.describe Eficiencia_Energetica do
       			@menu = [@eficiencia,@eficiencia2,@eficiencia3]
 			@precios = [11.50,3.50,8.25]
 		end
+
+		it "Calculando la huella nutricional" do
+			expect(@eficiencia.huella_nutricional).to eq(3.0)
+                        expect(@eficiencia2.huella_nutricional).to eq(2.5)
+                        expect(@eficiencia3.huella_nutricional).to eq(2.0)
+		end
 	end
 
 end

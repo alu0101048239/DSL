@@ -141,5 +141,26 @@ class Eficiencia_Energetica < Plato
 
         end
 
+	def huella_nutricional
+                if (valor_calorico < 670)
+                        aux = 1
+                elsif (valor_calorico < 830)
+                        aux = 2
+                else
+                        aux = 3
+                end
+
+                if (emisiones_gases_anuales < 0.8)
+                        aux2 = 1
+                elsif (emisiones_gases_anuales < 1.2)
+                        aux2 = 2
+                else
+                        aux2 = 3
+                end
+
+                return ((aux+aux2)/2.0).round(2)
+        end
+
+
 
 end
