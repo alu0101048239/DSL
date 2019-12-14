@@ -639,6 +639,12 @@ RSpec.describe Eficiencia_Energetica do
                         expect(@eficiencia3.huella_nutricional).to eq(2.0)
 			expect(@menu.max).to eq(@eficiencia)
 		end
+
+		it "Modificando el precio de los platos" do
+			aux=@menu.index(@menu.max)   		#obtenemos del plato con mayor huella su índice en el vector
+                        proporcion = 0.5*@precios[aux]		#calculamos la cantidad que sumaremos al precio de cada plato
+                        expect(@precios.collect{ |i| i + proporcion}).to eq([17.25, 9.25, 14.0])
+		end
 	end
 
 end
