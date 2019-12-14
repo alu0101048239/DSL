@@ -505,7 +505,7 @@ RSpec.describe Eficiencia_Energetica do
                         @eficiencia2 = Eficiencia_Energetica.new("Pollo con lentejas",@lista2, @gramos2 )
 
                         expect(@plato <= @plato2).to eq(true)
-                        expect(@eficiencia > @eficiencia2).to eq(true)
+                        expect(@eficiencia > @eficiencia2).to eq(false)
 
                 end
 
@@ -637,6 +637,7 @@ RSpec.describe Eficiencia_Energetica do
 			expect(@eficiencia.huella_nutricional).to eq(3.0)
                         expect(@eficiencia2.huella_nutricional).to eq(2.5)
                         expect(@eficiencia3.huella_nutricional).to eq(2.0)
+			expect(@menu.max).to eq(@eficiencia)
 		end
 	end
 

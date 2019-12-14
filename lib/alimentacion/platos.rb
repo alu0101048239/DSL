@@ -98,7 +98,8 @@ class Eficiencia_Energetica < Plato
 	attr_reader :nombre_plato, :lista_alimentos, :lista_gramos
         include Comparable
         def <=>(anOther)
-                self.uso_terreno <=> anOther.uso_terreno
+               #self.uso_terreno <=> anOther.uso_terreno
+		self.huella_nutricional <=> anOther.huella_nutricional
         end
 
         def initialize(nombre_plato, lista_alimentos, lista_gramos)
