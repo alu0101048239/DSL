@@ -4,7 +4,7 @@ attr_reader :nombre_menu, :lista_platos, :precio_menu
 	def initialize (nombre_menu, &block)
 		#@nombre_menu = nombre_menu
 		@lista_platos = []
-		@precios_menu = []
+		@precio_menu = 0
 
 		if block_given?
                         if block.arity == 1
@@ -21,7 +21,8 @@ attr_reader :nombre_menu, :lista_platos, :precio_menu
 
 	def componente(descripcion, precio = {})
 		componente = "\n - " + descripcion
-		componente << " || Precio: #{precio[:Precio]} euros " if precio[:Precio]
+		componente << " || Precio: #{precio[:Precio]} € " if precio[:Precio]
+		@precio_menu += precio[:Precio]
 		@lista_platos << componente
 	end
 
@@ -29,9 +30,7 @@ attr_reader :nombre_menu, :lista_platos, :precio_menu
 		output = @nombre_menu
 		output << "\n#{'=' * @nombre_menu.size}\n\n"
                 output << "Platos: \n #{@lista_platos.join(' ')}\n\n"
+		output << "Precio total: #{@precio_menu} €"
 	end
-
-
-
 
 end

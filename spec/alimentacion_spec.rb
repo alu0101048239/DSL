@@ -753,6 +753,10 @@ RSpec.describe Menu_DSL do
 				descripcion "Hamburguesa, carne y tarta"
 				componente "Hamburguesa especial de la casa",
 				:Precio => 4.25
+				componente "Carne de cerdo con camarones",
+				:Precio => 7.50
+				componente "Tarta de chocolate y nueces",
+				:Precio => 3.50
 			end
 			puts menu
 		end
