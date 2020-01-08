@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.description   = %q{Representación de alimentos con Programación Orientada a Objetos, utilizando Bundler, TDD y Guard}
   spec.homepage      = "https://github.com/ULL-ESIT-LPP-1920/tdd-alu0101048239.git"
 
-  spec.metadata["allowed_push_host"] = "https://github.com/ULL-ESIT-LPP-1920/tdd-alu0101048239.git"
+ # spec.metadata["allowed_push_host"] = "https://github.com/ULL-ESIT-LPP-1920/tdd-alu0101048239.git"
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/ULL-ESIT-LPP-1920/tdd-alu0101048239.git"
