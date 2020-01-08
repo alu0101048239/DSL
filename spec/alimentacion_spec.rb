@@ -650,3 +650,11 @@ RSpec.describe Eficiencia_Energetica do
 	end
 
 end
+
+RSpec.describe Plato_DSL do
+	context "Probando el DSL" do
+		it "Probando la clase Plato_DSL" do
+			plato = Plato_DSL.new("Hamburguesa") 
+		end
+	end
+end
