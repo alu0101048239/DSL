@@ -24,9 +24,18 @@ class Plato_DSL
 		@nombre_plato = n
 	end
 
-	def alimento(descripcion = {})
+	def alimento(descripcion = {}, gramos = {})
 		alimento = descripcion
+		alimento << " (#{gramos[:Gramos]})" if gramos[:Gramos]
+		#gramaje = gramos
 		@lista_alimentos << alimento
+		#@lista_gramos << gramos
+	end
+
+	def to_s
+		output = @nombre_plato
+		output << "\n#{'=' * @nombre_plato.size}\n\n"
+		output << "Alimentos: #{@lista_alimentos.join(', ')}\n\n"
 	end
 
 
