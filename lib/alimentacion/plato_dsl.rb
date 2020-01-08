@@ -7,7 +7,7 @@ class Plato_DSL
         end
 
         def initialize(nombre_plato, &block)
-                @nombre_plato = nombre_plato
+                #@nombre_plato = nombre_plato
                 @lista_alimentos = []
                 @lista_gramos = []
 
@@ -19,5 +19,9 @@ class Plato_DSL
                         end
                 end
         end
+
+	def nombre (n)
+		@nombre_plato = n
+	end
 
 end
