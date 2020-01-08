@@ -24,7 +24,7 @@ class Plato_DSL
 	end
 
 	def alimento(descripcion, gramos = {})
-		alimento = "- " + descripcion
+		alimento = "\n - " + descripcion
 		alimento << "\n     Información nutricional:"
 		alimento << " || Cantidad: #{gramos[:Gramos]} gramos ||" if gramos[:Gramos]
 		alimento << " Proteínas: #{gramos[:Proteinas]} gramos ||" if gramos[:Proteinas]
@@ -39,7 +39,7 @@ class Plato_DSL
 	def to_s
 		output = @nombre_plato
 		output << "\n#{'=' * @nombre_plato.size}\n\n"
-		output << "Alimentos: \n #{@lista_alimentos.join(', ')}\n\n"
+		output << "Alimentos: \n #{@lista_alimentos.join(' ')}\n\n"
 	end
 
 end

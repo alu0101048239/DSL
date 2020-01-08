@@ -654,7 +654,7 @@ end
 RSpec.describe Plato_DSL do
 	context "Probando el DSL" do
 		it "Probando la clase Plato_DSL" do
-			plato = Plato_DSL.new("Hamburguesa") do
+			plato1 = Plato_DSL.new("Hamburguesa") do
 				nombre "Hamburguesa especial de la casa"
 				alimento "Carne de vaca", :Gramos => "100",
 				:Proteinas => "21.1",
@@ -662,8 +662,82 @@ RSpec.describe Plato_DSL do
 				:Lipidos => "3.1",
 				:Gases => "50.0",
 				:Terreno => "164.0"
+
+                                alimento "Queso", :Gramos => "50",
+				:Proteinas => "25.0",
+				:Hidratos => "1.3",
+				:Lipidos => "33.0",
+				:Gases => "11.0",
+				:Terreno => "41.0"
+
+				alimento "Huevo", :Gramos => "50",
+					:Proteinas => "13.0",
+                                :Hidratos => "1.1",
+				:Lipidos => "11.0",
+				:Gases => "4.2",
+				:Terreno => "5.7"
+
+				alimento "Pollo", :Gramos => "100",
+				:Proteinas => "20.6",
+				:Hidratos => "0.0",
+                                :Lipidos => "5.6",
+				:Gases => "5.7",
+				:Terreno => "7.1"
+
 			end
-		        puts plato
+
+			plato2 = Plato_DSL.new("Carne con camarones") do
+                                nombre "Carne de cerdo con camarones"
+                                alimento "Cerdo", :Gramos => "200",
+                                :Proteinas => "21.5",
+                                :Hidratos => "0.0",
+				:Lipidos => "6.3",
+				:Gases => "7.6",
+				:Terreno => "11.0"
+
+                                alimento "Camarones", :Gramos => "100",
+				:Proteinas => "17.6",
+				:Hidratos => "1.5",
+				:Lipidos => "0.6",
+				:Gases => "18.0",
+				:Terreno => "2.0"
+
+                                alimento "Cerveza", :Gramos => "150",
+                                :Proteinas => "0.5",
+				:Hidratos => "3.6",
+				:Lipidos => "0.0",
+				:Gases => "0.24",
+				:Terreno => "0.22"                                                           
+                        end
+
+			plato3 = Plato_DSL.new("Tarta") do
+                                nombre "Tarta de chocolate y nueces"
+
+                                alimento "Chocolate", :Gramos => "50",
+				:Proteinas => "5.3",
+                                :Hidratos => "47.0",
+				:Lipidos => "30.0",
+				:Gases => "2.3",
+				:Terreno => "3.4"
+
+                                alimento "Nuez", :Gramos => "50",
+				:Proteinas => "20.0",
+				:Hidratos => "21.0",
+				:Lipidos => "54.0",
+				:Gases => "0.3",
+				:Terreno => "7.9"
+
+                                alimento "Café", :Gramos => "75",
+                                :Proteinas => "0.1",
+				:Hidratos => "0.0",
+				:Lipidos => "0.0",
+				:Gases => "0.4",
+				:Terreno => "0.3"
+
+                        end
+			puts plato1
+			puts plato2
+			puts plato3
 		end
 	end
 end
