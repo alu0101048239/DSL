@@ -739,5 +739,17 @@ RSpec.describe Plato_DSL do
 			puts plato2
 			puts plato3
 		end
+
+	end
+
+end
+
+RSpec.describe Menu_DSL do
+
+	context "Probando el DLS" do
+
+		it "Probando la clase Menu_DSL" do
+			menu = Menu_DSL.new("Combinado nº 1")
+		end
 	end
 end
