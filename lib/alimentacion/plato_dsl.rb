@@ -24,4 +24,10 @@ class Plato_DSL
 		@nombre_plato = n
 	end
 
+	def alimento(descripcion = {})
+		alimento = descripcion
+		@lista_alimentos << alimento
+	end
+
+
 end

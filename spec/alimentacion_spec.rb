@@ -656,6 +656,7 @@ RSpec.describe Plato_DSL do
 		it "Probando la clase Plato_DSL" do
 			plato = Plato_DSL.new("Hamburguesa") do
 				nombre "Hamburguesa especial de la casa"
+				alimento :Descripcion => "carne de vaca"
 			end
 		       
 		end
