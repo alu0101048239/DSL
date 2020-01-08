@@ -751,7 +751,10 @@ RSpec.describe Menu_DSL do
 		it "Probando la clase Menu_DSL" do
 			menu = Menu_DSL.new("Combinado nº 1") do
 				descripcion "Hamburguesa, carne y tarta"
+				componente "Hamburguesa especial de la casa",
+				:Precio => 4.25
 			end
+			puts menu
 		end
 	end
 end
