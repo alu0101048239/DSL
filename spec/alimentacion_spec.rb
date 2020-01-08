@@ -749,7 +749,9 @@ RSpec.describe Menu_DSL do
 	context "Probando el DLS" do
 
 		it "Probando la clase Menu_DSL" do
-			menu = Menu_DSL.new("Combinado nº 1")
+			menu = Menu_DSL.new("Combinado nº 1") do
+				descripcion "Hamburguesa, carne y tarta"
+			end
 		end
 	end
 end

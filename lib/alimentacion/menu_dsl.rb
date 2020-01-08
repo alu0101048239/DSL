@@ -14,4 +14,9 @@ attr_reader :nombre_menu, :lista_platos, :precio_menu
                         end
                 end
 	end
+
+	def descripcion(n)
+		@nombre_menu = n
+	end
+
 end
