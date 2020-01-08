@@ -659,7 +659,9 @@ RSpec.describe Plato_DSL do
 				alimento "Carne de vaca", :Gramos => "100",
 				:Proteinas => "21.1",
 				:Hidratos => "0.0",
-				:Lipidos => "3.1"
+				:Lipidos => "3.1",
+				:Gases => "50.0",
+				:Terreno => "164.0"
 			end
 		        puts plato
 		end

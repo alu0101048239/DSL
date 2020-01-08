@@ -30,6 +30,9 @@ class Plato_DSL
 		alimento << " Proteínas: #{gramos[:Proteinas]} gramos ||" if gramos[:Proteinas]
 		alimento << " Hidratos: #{gramos[:Hidratos]} gramos ||" if gramos[:Hidratos]
 		alimento << " Lípidos: #{gramos[:Lipidos]} gramos" if gramos[:Lipidos]
+		alimento << "\n     Información ambiental:"
+		alimento << " Gases anuales: #{gramos[:Gases]} kilogramos ||" if gramos[:Gases]
+		alimento << " Uso del terreno: #{gramos[:Terreno]} metros cuadrados" if gramos[:Gases]
 		@lista_alimentos << alimento
 	end
 
